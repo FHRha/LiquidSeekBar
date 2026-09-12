@@ -81,14 +81,21 @@ describe('LiquidSeekBar & LiquidAudioWave Refined Tests', () => {
     expect(container.querySelector('canvas')).not.toBeNull();
   });
 
-  it('handles boundary values (0, 1, out-of-bounds, NaN) cleanly', () => {
+  it('handles boundary values (0, 1, out-of-bounds, NaN, Infinity) cleanly', () => {
     expect(() => {
       const { rerender } = render(<LiquidSeekBar value={0} buffered={0} />);
       rerender(<LiquidSeekBar value={1} buffered={1} />);
       rerender(<LiquidSeekBar value={-0.2} buffered={-0.5} />);
       rerender(<LiquidSeekBar value={1.5} buffered={120} />);
       rerender(<LiquidSeekBar value={NaN} buffered={NaN} />);
+      rerender(<LiquidSeekBar value={Infinity} buffered={Infinity} />);
+      rerender(<LiquidSeekBar value={-Infinity} buffered={-Infinity} />);
       rerender(<LiquidSeekBar value={0.5} buffered={undefined} />);
+
+      // Rapid re-render simulation during audio playback
+      for (let i = 1; i <= 10; i++) {
+        rerender(<LiquidSeekBar value={i / 100} isAnimated={true} />);
+      }
     }).not.toThrow();
   });
 
