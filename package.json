@@ -1,7 +1,22 @@
 {
   "name": "liquid-seekbar",
-  "private": true,
   "version": "1.0.0",
+  "description": "Fluid, multi-layered organic audio seekbar and progress component for React",
+  "author": "FHRha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FHRha/LiquidSeekBar.git"
+  },
+  "keywords": [
+    "react",
+    "audio",
+    "seekbar",
+    "progress-bar",
+    "waveform",
+    "liquid",
+    "canvas"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,40 +1,40 @@
-# 🌊 LiquidSeekBar
+# LiquidSeekBar
 
 A high-performance, fluid, organic multi-layered audio seekbar and progress component for modern web applications. Powered by HTML5 Canvas, quadratic Bezier splines, and mathematical trochoidal waveforms.
 
 ---
 
-## 🎬 Showcase (100% Track Coverage • 1 to 4 Waves)
+## Showcase (100% Track Coverage - 1 to 4 Waves)
 
 <p align="center">
   <img src="./assets/liquid-seekbar-showcase.gif" alt="LiquidSeekBar 1-4 Waves Showcase" width="100%" />
 </p>
 
-The showcase above demonstrates the **standard calibrated physics** across **1, 2, 3, and 4 wave layers** rendered at **100% track coverage** with dynamic color harmonization:
+The showcase above demonstrates the standard calibrated physics across 1, 2, 3, and 4 wave layers rendered at 100% track coverage with dynamic color harmonization:
 
 * **1 Wave Layer (Minimalist Flow)**: A clean, sleek single liquid ribbon with steady, focused momentum.
-* **2 Wave Layers (Default Calibrated)**: Harmonious dual-crest parallax (`0.90π` phase offset) offering fluid depth without visual clutter.
+* **2 Wave Layers (Default Calibrated)**: Harmonious dual-crest parallax (0.90pi phase offset) offering fluid depth without visual clutter.
 * **3 Wave Layers (Tri-Parallax Depth)**: Three progressive layers (background, mid-flow, and crest) generating rich aquatic depth.
 * **4 Wave Layers (Liquid Silk Harmonics)**: Quad-layered liquid silk combining multiple frequencies and speeds for a luxury aesthetic.
 
 ---
 
-## ✨ Key Technical Highlights
+## Key Technical Highlights
 
-1. **Organic Trochoidal Crests (`roundness: 1.35`)**:
-   Standard sine waves create flat, unnatural plateaus at their peaks. LiquidSeekBar combines a 2nd-harmonic trochoidal shaping with an exponential curvature factor to guarantee rounded, natural crests.
-2. **Progressive Swell Distance (`swellDistance: 100px`)**:
-   Waves do not jump abruptly to full height at the start. Amplitude grows gradually over a customizable pixel distance (`swellDistance`), emerging seamlessly from the rounded left cap.
+1. **Organic Trochoidal Crests (roundness: 1.35)**:
+   Standard sine waves create flat, unnatural plateaus at their peaks. LiquidSeekBar combines 2nd-harmonic trochoidal shaping with an exponential curvature factor to guarantee rounded, natural crests.
+2. **Progressive Swell Distance (swellDistance: 100px)**:
+   Waves do not jump abruptly to full height at the start. Amplitude grows gradually over a customizable pixel distance (swellDistance), emerging seamlessly from the rounded left cap.
 3. **Tangent Zero-Exit Tapering**:
-   The active wave terminates cleanly tangent to the 4px track line right at the seekbar knob position ($x = \text{progress}$), eliminating clipping artifacts and harsh 90° vertical cuts.
+   The active wave terminates cleanly tangent to the 4px track line right at the seekbar knob position (x = progress), eliminating clipping artifacts and harsh 90-degree vertical cuts.
 4. **Frame-Rate Independent Delta-Time**:
-   Animation speed relies on high-resolution timestamps (`performance.now()`), running at the exact same physical flow speed on 60Hz, 120Hz, 144Hz, or 240Hz displays without self-acceleration bugs.
+   Animation speed relies on high-resolution timestamps (performance.now()), running at the exact same physical flow speed on 60Hz, 120Hz, 144Hz, or 240Hz displays without self-acceleration bugs.
 5. **Universal Color Support**:
-   Supports `HEX` (`#10b981`), `RGB` (`rgb(16, 185, 129)`), `RGBA`, and automatic extraction from CSS custom properties (e.g. `--color-primary-rgb`).
+   Supports HEX (#10b981), RGB (rgb(16, 185, 129)), RGBA, and automatic extraction from CSS custom properties (e.g. --color-primary-rgb).
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -70,9 +70,9 @@ export function AudioPlayer() {
 
 ---
 
-## 🎛️ Component API & Wave Settings
+## Component API & Wave Settings
 
-### `<LiquidSeekBar />` Props
+### LiquidSeekBar Props
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
@@ -94,7 +94,7 @@ export function AudioPlayer() {
 
 ---
 
-## 🌊 Wave Layer Configuration (`WaveLayerConfig`)
+## Wave Layer Configuration (WaveLayerConfig)
 
 For granular custom liquid animations, pass an array of `layers`:
 
@@ -117,26 +117,26 @@ export interface WaveLayerConfig {
 When you specify `waveCount`, LiquidSeekBar automatically applies these calibrated configurations:
 
 #### 1 Wave (Minimalist)
-* **Layer 1**: `offsetPhase: 0.00π`, `opacity: 0.85`, `speed: 0.60x`, `amplitudeMultiplier: 0.40x`, `freq: 0.026`
+* **Layer 1**: `offsetPhase: 0.00pi`, `opacity: 0.85`, `speed: 0.60x`, `amplitudeMultiplier: 0.40x`, `freq: 0.026`
 
 #### 2 Waves (Default Calibrated)
-* **Wave #1 (Back)**: `offsetPhase: 0.00π`, `opacity: 0.35`, `speed: 0.50x`, `amplitudeMultiplier: 0.36x`, `freq: 0.022`
-* **Wave #2 (Front)**: `offsetPhase: 0.90π`, `opacity: 0.80`, `speed: 0.65x`, `amplitudeMultiplier: 0.40x`, `freq: 0.028`
+* **Wave #1 (Back)**: `offsetPhase: 0.00pi`, `opacity: 0.35`, `speed: 0.50x`, `amplitudeMultiplier: 0.36x`, `freq: 0.022`
+* **Wave #2 (Front)**: `offsetPhase: 0.90pi`, `opacity: 0.80`, `speed: 0.65x`, `amplitudeMultiplier: 0.40x`, `freq: 0.028`
 
 #### 3 Waves (Tri-Parallax)
-* **Wave #1 (Back)**: `offsetPhase: 0.00π`, `opacity: 0.30`, `speed: 0.45x`, `amplitudeMultiplier: 0.32x`, `freq: 0.020`
-* **Wave #2 (Mid)**: `offsetPhase: 0.55π`, `opacity: 0.55`, `speed: 0.58x`, `amplitudeMultiplier: 0.36x`, `freq: 0.025`
-* **Wave #3 (Front)**: `offsetPhase: 0.95π`, `opacity: 0.85`, `speed: 0.68x`, `amplitudeMultiplier: 0.42x`, `freq: 0.030`
+* **Wave #1 (Back)**: `offsetPhase: 0.00pi`, `opacity: 0.30`, `speed: 0.45x`, `amplitudeMultiplier: 0.32x`, `freq: 0.020`
+* **Wave #2 (Mid)**: `offsetPhase: 0.55pi`, `opacity: 0.55`, `speed: 0.58x`, `amplitudeMultiplier: 0.36x`, `freq: 0.025`
+* **Wave #3 (Front)**: `offsetPhase: 0.95pi`, `opacity: 0.85`, `speed: 0.68x`, `amplitudeMultiplier: 0.42x`, `freq: 0.030`
 
 #### 4 Waves (Liquid Silk)
-* **Wave #1 (Back)**: `offsetPhase: 0.00π`, `opacity: 0.22`, `speed: 0.40x`, `amplitudeMultiplier: 0.28x`, `freq: 0.018`
-* **Wave #2 (Mid-Back)**: `offsetPhase: 0.45π`, `opacity: 0.42`, `speed: 0.50x`, `amplitudeMultiplier: 0.32x`, `freq: 0.023`
-* **Wave #3 (Mid-Front)**: `offsetPhase: 0.90π`, `opacity: 0.65`, `speed: 0.62x`, `amplitudeMultiplier: 0.38x`, `freq: 0.028`
-* **Wave #4 (Front)**: `offsetPhase: 1.35π`, `opacity: 0.88`, `speed: 0.72x`, `amplitudeMultiplier: 0.42x`, `freq: 0.032`
+* **Wave #1 (Back)**: `offsetPhase: 0.00pi`, `opacity: 0.22`, `speed: 0.40x`, `amplitudeMultiplier: 0.28x`, `freq: 0.018`
+* **Wave #2 (Mid-Back)**: `offsetPhase: 0.45pi`, `opacity: 0.42`, `speed: 0.50x`, `amplitudeMultiplier: 0.32x`, `freq: 0.023`
+* **Wave #3 (Mid-Front)**: `offsetPhase: 0.90pi`, `opacity: 0.65`, `speed: 0.62x`, `amplitudeMultiplier: 0.38x`, `freq: 0.028`
+* **Wave #4 (Front)**: `offsetPhase: 1.35pi`, `opacity: 0.88`, `speed: 0.72x`, `amplitudeMultiplier: 0.42x`, `freq: 0.032`
 
 ---
 
-## 💻 Advanced Examples
+## Advanced Examples
 
 ### Custom 3-Wave Tri-Parallax Setup
 
@@ -195,7 +195,7 @@ export function SmoothPlayer() {
 
 ---
 
-## 🎨 Interactive Studio Playground
+## Interactive Studio Playground
 
 To experiment with presets, fine-tune crest roundness, or test phase offsets in real time:
 
@@ -214,7 +214,7 @@ Open `http://localhost:5180` (or the printed local port) to open the interactive
 
 ---
 
-## 🧪 Testing & Verification
+## Testing & Verification
 
 ```bash
 # Run unit tests (Vitest)
@@ -226,7 +226,8 @@ pnpm build
 
 ---
 
-## 📄 License
+## License
 
-MIT License. Free for commercial and personal use.
+MIT License. See the [LICENSE](LICENSE) file for details.
+
 
